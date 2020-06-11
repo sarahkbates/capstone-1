@@ -1,51 +1,43 @@
-import React, { Fragment, useState, useEffect } from 'react';
+  
+import React, {useEffect, useState} from 'react';
 import './App.css';
-import data from './item-data.json';
+import items from './items.json';
 import Header from './Components/Header';
-import updateData from './Components/ProductCard'
+import Items from './Components/Items'
 import ShoppingCart from './Components/ShoppingCart';
+import SearchPage from './Components/SearchPage';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 function App() {
 
-  const [newData, setNewData] = useState([]);
-  const [searchInput, setSearchInput] = useState('');
-  const [shoppingCart, setShoppingCart] = useState([]);
+  const [items, setItems] = useState(Items);
 
-  useEffect( () => {
-    setNewData(updateData);
+  useEffect(() => {
+    Items(items);
   }, [])
 
-  const handleSearchInputChange = e => setSearchInput(e.target.value);
+  const [searchInput, setSearchInput] = useState('');
+  useEffect(() => {
+    setSearchInput('')
+  }, [])
 
-  const handleSearch = (e) => {
-    if (e.key === 'Enter') {
-      setNewData([])
-      const results = data.filter( data => data.name.toLowerCase().split(' ').includes(searchInput.toLowerCase()));
-      const searchData = results.map( (data) => {
-        return (
-          <div className='product-card' key={data.id} >
-            <img src={process.env.PUBLIC_URL + data.img} alt={data.imgAlt} className='product-img' />
-            <div className='product-info'>
-              <p>{data.name}</p>
-              <p className='category'>{data.category}</p>
-              <p>${data.price}</p>
-            </div>
-            <button className='cart-btn' >Add to Cart</button>
-          </div>
-        )
-      });
-      setNewData(searchData);
-    }
-  };
+  useEffect(()=> {
+    console.log("searchInput in /App", searchInput);
+    console.log("shopping cart in app", shoppingCart);
+})
+
+  const [shoppingCart, setShoppingCart] = useState([]);
 
   return (
-    <Fragment>
-      <Header handleSearch={handleSearch} handleSearchInputChange={handleSearchInputChange} searchInput={searchInput} updateData={updateData} setNewData={setNewData} />
-      <div className='products' >
-        {newData}
-        <ShoppingCart shoppingCart={shoppingCart} />
-      </div>
-    </Fragment>
+    <Router>
+      <Header searchInput={searchInput} setSearchInput={setSearchInput} />
+      <Switch>
+        <Route path='/' exact render={(props) => <Items {...props} items={items} setItems={setItems} shoppingCart = {shoppingCart} setShoppingCart = {setShoppingCart} />} />
+         <Route path='/items' render={(props) => <Items {...props} items={items} setItems={setItems}shoppingCart = {shoppingCart} setShoppingCart = {setShoppingCart} /> } />
+        <Route path='/shoppingcart' render = {(props) => <ShoppingCart {...props} ShoppingCart = {ShoppingCart} items={items} setItems={setItems}shoppingCart = {shoppingCart} setShoppingCart = {setShoppingCart}/>} />
+        <Route path='/searchpage' render={(props) => <SearchPage {...props} setItems={setItems} searchInput={searchInput} />} />
+      </Switch>
+    </Router> 
   );
 }
 

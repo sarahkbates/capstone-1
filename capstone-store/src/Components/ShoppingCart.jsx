@@ -1,20 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
+import items from '../items.json';
 
-export default function ShoppingCart({shoppingCart}) {
+export default function ShoppingCart(props) {
 
-    const emptyCart = () => {
-        if (shoppingCart.length === 0) {
-            return (
-                'Your cart is empty'
-            )
-        }
-    }
+React.useEffect(()=>{
+    console.log("shopping cart /shoppingCart", props.shoppingCart);
+})     
+
 
     return(
-        <div className='shopping-cart'>
-            <h1>Your Shopping Cart:</h1>
-            <hr />
-        <p className='empty-cart' >{emptyCart()}</p>
-        </div>
+        <div>
+           {props.shoppingCart.map((item,i) => {
+               return(
+                <div className = 'ShoppingCart'>
+                    <ul>{item.name}
+                    <li>${item.price}</li>
+
+                    </ul>
+                </div>
+               )
+           })}
+            </div>
     )
 }
