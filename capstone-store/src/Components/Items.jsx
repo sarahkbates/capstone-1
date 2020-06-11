@@ -46,8 +46,10 @@ return(
         <img src={process.env.PUBLIC_URL + item.img} alt={item.imgAlt} className='product-img' />
         <div className='product-info'>
           <p>{item.name}</p>
+          <p>Serial #: {item.serialnum}</p>
           <p>${item.price}</p>
           <p> Stock: {item.stock}</p>
+          <p>Category: {item.category}</p>
           <button onClick ={() => buy(item, i)} className='cart-btn' >Add to Cart</button>
         </div>
       </div>
