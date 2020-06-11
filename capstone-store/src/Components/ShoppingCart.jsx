@@ -7,12 +7,14 @@ React.useEffect(()=>{
     console.log("shopping cart /shoppingCart", props.shoppingCart);
 })     
 
+const total = 0;
 
     return(
-        <div>
+        <div className = "Checkout">
            {props.shoppingCart.map((item,i) => {
                return(
-                <div className = 'ShoppingCart'>
+                <div>
+                    <img src={process.env.PUBLIC_URL + item.img} alt={item.imgAlt} className='product-img'></img>
                     <ul>{item.name}
                     <li>${item.price}</li>
 
