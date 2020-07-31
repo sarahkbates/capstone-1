@@ -1,0 +1,102 @@
+[
+    {
+        "id": 1,
+        "serialnum" : 1234,
+        "name": "Bow Tie Leash",
+        "price": 35.00,
+        "category": ["leashes"],
+        "img": "./image-assets/BowTieLeash.jpg",
+        "imgAlt": "Bow Tie Leash",
+        "stock": 5
+    },
+    {
+        "id": 2,
+        "serialnum" : 4567,
+        "name": "Purple Dinosaur Toy",
+        "price": 10.00,
+        "category": ["toys"],
+        "img": "./image-assets/DinoSaurToy.jpg",
+        "imgAlt": "Purple Dinosaur",
+        "stock": 2
+    },
+    {
+        "id": 3,
+        "serialnum" : 8901,
+        "name": "Floofy Ball",
+        "price": 15.00,
+        "category": ["toys"],
+        "img": "./image-assets/Floof.jpg",
+        "imgAlt": "Floof",
+        "stock": 1
+    },
+    {
+        "id": 4,
+        "serialnum" : 2345,
+        "name": "Plush Pidgeon",
+        "price": 12.00,
+        "category": ["toys"],
+        "img": "./image-assets/PidgeonToy.jpg",
+        "imgAlt": "Pidgeon",
+        "stock": 6
+    },
+    {
+        "id": 5,
+        "serialnum" : 6789,
+        "name": "Plaid Bandana",
+        "price": 22.00,
+        "category": ["clothes"],
+        "img": "./image-assets/PlaidBandana.jpg",
+        "imgAlt": "Plaid Bandana",
+        "stock": 3
+    },
+    {
+        "id": 6,
+        "serialnum" : 9876,
+        "name": "Crazy Rope Toy",
+        "price": 15.00,
+        "category": ["toys"],
+        "img": "./image-assets/RopeToy.jpg",
+        "imgAlt": "Rope Toy",
+        "stock": 8
+    },
+    {
+        "id": 7,
+        "serialnum" : 5432,
+        "name": "Watercolor Leash",
+        "price": 35.00,
+        "category": ["leashes"],
+        "img": "./image-assets/WatercolorLeash.jpg",
+        "imgAlt": "Watercolor Leash",
+        "stock": 1
+    },
+    {
+        "id": 8,
+        "serialnum" : 9741,
+        "name": "Wobble Treat Toy",
+        "price": 15.00,
+        "category": ["toys"],
+        "img": "./image-assets/WobbleTreat.jpg",
+        "imgAlt": "Wobble Treat Toy",
+        "stock": 5
+    },
+    {
+        "id": 9,
+        "serialnum" : 7624,
+        "name": "Blue Elephant",
+        "price": 10.00,
+        "category": ["toys"],
+        "img": "./image-assets/BlueElephant.jpg",
+        "imgAlt": "Blue Elephant",
+        "stock": 3
+    },
+    {
+        "id": 10,
+        "serialnum" : 4137,
+        "name": "Blue Spike Ball",
+        "price": 7.00,
+        "category": ["toys"],
+        "img": "./image-assets/BlueBall.jpg",
+        "imgAlt": "Blue Ball",
+        "stock": 6
+    }
+]
